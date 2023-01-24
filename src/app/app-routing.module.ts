@@ -10,13 +10,14 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'intro',
     pathMatch: 'full'
   },
   {
     path: 'intro',
     loadChildren: () => import('./intro/intro.module').then( m => m.IntroPageModule)
   },
+<<<<<<< HEAD
   {
     path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
@@ -26,6 +27,8 @@ const routes: Routes = [
     loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
   },
  
+=======
+>>>>>>> 3d8a94381bac4736b9e9d32f63cac19754f97a99
 ];
 
 @NgModule({

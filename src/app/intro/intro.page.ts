@@ -1,13 +1,21 @@
+<<<<<<< HEAD
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Storage } from '@ionic/storage';
+=======
+import { Component } from '@angular/core';
+>>>>>>> 3d8a94381bac4736b9e9d32f63cac19754f97a99
 
 @Component({
   selector: 'app-intro',
   templateUrl: 'intro.page.html',
   styleUrls: ['intro.page.scss'],
 })
+<<<<<<< HEAD
 export class IntroPage implements OnInit {
+=======
+export class IntroPage {
+>>>>>>> 3d8a94381bac4736b9e9d32f63cac19754f97a99
 
   slideOpt = {
     initialSlide: 1, //slide inicial (primero) [0,1,2,3]
@@ -37,6 +45,7 @@ export class IntroPage implements OnInit {
     }
   ]
   
+<<<<<<< HEAD
   constructor(private router: Router, private storage: Storage) {}
 
   finish(){
@@ -45,5 +54,8 @@ export class IntroPage implements OnInit {
   }
   ngOnInit() {
   }
+=======
+  constructor() {}
+>>>>>>> 3d8a94381bac4736b9e9d32f63cac19754f97a99
 
 }
