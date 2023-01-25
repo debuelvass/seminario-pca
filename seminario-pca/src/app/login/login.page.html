@@ -1,0 +1,53 @@
+<ion-content>
+  <form [formGroup]="loginForm" (ngSubmit)="loginUser(loginForm.value)">
+
+    <ion-item fill="solid">
+      <ion-label position="floating">Ingrese su email</ion-label>
+      <ion-input formControlName="email"></ion-input>
+    </ion-item>
+<div>
+  <ng-container *ngFor="let validation of validation_message.email">
+    <div *ngIf="
+    loginForm.get('email')?.hasError(validation.type) && 
+    (loginForm.get('email')?.dirty || 
+    loginForm.get('email')?.touched)
+    ">
+      {{validation.message}}
+    </div>
+  </ng-container>
+</div>
+    <ion-item fill="solid">
+      <ion-label position="floating">Ingrese su contraseña</ion-label>
+      <ion-input formControlName="password" type="password"></ion-input>
+    </ion-item>
+    <div>
+      <ng-container *ngFor="let validation of validation_message_password.password">
+        <div *ngIf="
+        loginForm.get('password')?.hasError(validation.type) && 
+        (loginForm.get('password')?.dirty || 
+        loginForm.get('password')?.touched)
+        ">
+          {{validation.message}}
+        </div>
+      </ng-container>
+    </div>
+
+<ion-button 
+shape="round"
+[disabled]="!loginForm.valid"
+type="submit">
+  Ingresar
+</ion-button>
+<ion-button 
+shape="round" (click)="registerUser()">
+  Registrarse
+</ion-button>
+  </form>
+{{ errorMessage }}
+
+</ion-content>  
+<ion-footer>
+  <ion-toolbar>
+    <ion-title>Title</ion-title>
+  </ion-toolbar>
+</ion-footer>
