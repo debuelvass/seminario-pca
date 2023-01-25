@@ -2,11 +2,9 @@
    <ion-slides pager="true" [options]="slideOpt">
   
         <ion-slide *ngFor="let slide of slides;">
-<<<<<<< HEAD
+
             <ion-icon name="close" (click)="finish()" ></ion-icon>
-=======
-            <ion-icon name="close"></ion-icon>
->>>>>>> 3d8a94381bac4736b9e9d32f63cac19754f97a99
+
                 <h1>{{slide.title}}</h1>
                     <h2>{{slide.subtitle}}</h2>
                         <img src="{{slide.img}}" alt="">
@@ -14,7 +12,7 @@
         </ion-slide>
 
         <ion-slide name="slide-perzonalizado">
-            <ion-icon name="close-circle-outline"></ion-icon>
+            <ion-icon name="close-circle-outline" (click)="finish()"></ion-icon>
                 <h1>Librería Móvil</h1>
                     <h2>Biblioteca digital desde su dispositivo móvil.</h2>
                         <img src="..\assets\img\mobile-book.jpg" alt="">
