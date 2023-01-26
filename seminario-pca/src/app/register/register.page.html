@@ -40,10 +40,15 @@
     <ion-input placeholder="Ingrese número de documento" formControlName="document_number"> </ion-input>
   </ion-item>
   
-  <ion-item>
-    <ion-label position="floating">Carrera</ion-label>
-    <ion-input placeholder="Ingrese carrera de formación" formControlName="career"></ion-input>
-  </ion-item>
+    <ion-list>
+    <ion-item>
+      <ion-label position="floating">Carrera</ion-label>
+      <ion-select interface="popover" placeholder="Escoja carrera de formación" formControlName="career">
+        <ion-select-option value="DS">DESARROLLO DE SOFWARE</ion-select-option>
+        <ion-select-option value="IS">INGENIERIA DE SISTEMAS</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
   
   <ion-item>
     <ion-label position="floating">Email</ion-label>

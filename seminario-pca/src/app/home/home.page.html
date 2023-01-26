@@ -1,20 +1,69 @@
 <ion-header>
-    <ion-toolbar>
+    <ion-toolbar color="success">
         <ion-buttons slot="end">
             <ion-menu-button></ion-menu-button>
         </ion-buttons>
     </ion-toolbar>
 </ion-header>
 <ion-content>
-    <p class="ion-text-center ion-text-uppercase">Dashboard - HOME</p>
+    <p class="ion-text-center ion-text-uppercase">Dashboard</p>
 
     <ion-slides [options]="slideOps">
         <ion-slide *ngFor="let author of authors">
-            <ion-avatar>
-                <img src="{{author.avatar}}"/>
-                <span>{{author.first_name}}</span>
+            <ion-avatar (click)="showBooks(author)">
+                <img src="{{author.photo}}"/>
+                
+                <ion-label>{{author.name}}</ion-label>
             </ion-avatar>
         </ion-slide>
     </ion-slides>
+
+    <ion-grid>
+        <ion-row>
+            <ion-col size="6">
+                <ion-card color="dark" (click)="goToAuthors()" >
+                    <ion-card-header>
+                      <ion-card-title>Autores</ion-card-title>
+                    </ion-card-header>
+                    <ion-card-content>
+                        <ion-icon name="people"></ion-icon>
+                    </ion-card-content>
+                </ion-card>
+            </ion-col>
+            <ion-col size="6">
+                <ion-card color="dark" (click)="goToBooks()">
+                    <ion-card-header>
+                      <ion-card-title>Libros</ion-card-title>
+                    </ion-card-header>
+                    <ion-card-content>
+                    <ion-icon name="library"></ion-icon>
+                </ion-card-content>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col size="6">
+                <ion-card color="dark" >
+                    <ion-card-header>
+                      <ion-card-title>Favoritos</ion-card-title>
+                    </ion-card-header>
+                    <ion-card-content>
+                        <ion-icon name="diamond"></ion-icon>
+                    </ion-card-content>
+                </ion-card>
+            </ion-col>
+            <ion-col size="6">
+                <ion-card color="dark" >
+                    <ion-card-header>
+                      <ion-card-title>Top 10</ion-card-title>
+                    </ion-card-header>
+                    <ion-card-content>
+                        <ion-icon name="stats-chart"></ion-icon>
+                    </ion-card-content>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
 
 </ion-content>

@@ -10,7 +10,21 @@
         </ion-buttons>
       </ion-toolbar>
     </ion-header>
+    <ion-item (click)="goToHome()">
+      <ion-icon name="home-outline" slot="start"></ion-icon>
+      Inicio
+    </ion-item>
     <ion-content>
+      <ion-item (click)="goToAuthors()">
+        <ion-icon name="person-outline" slot="start"></ion-icon>
+        Autores
+      </ion-item>
+
+      <ion-item (click)="goToBooks()">
+        <ion-icon name="book-outline" slot="start"></ion-icon>
+        Libros
+      </ion-item>
+      
       <ion-item (click)="logout()">
         <ion-icon name="log-out" slot="start"></ion-icon>
         Salir

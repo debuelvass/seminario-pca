@@ -1,0 +1,26 @@
+
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-buttons slot="start">
+      <ion-back-button text="Volver"></ion-back-button>
+      
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-menu-button text="Volver"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Libros</ion-title>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let book of books">
+      <ion-avatar slot="start">
+        <img src="{{book.cover}}"/>
+      </ion-avatar>
+      
+      <ion-label>{{book.name}}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
