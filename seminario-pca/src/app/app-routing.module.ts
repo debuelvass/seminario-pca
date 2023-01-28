@@ -29,6 +29,18 @@ const routes: Routes = [
     path: 'books-modal',
     loadChildren: () => import('./books-modal/books-modal.module').then( m => m.BooksModalPageModule)
   },
+  {
+    path: 'favorite-books',
+    loadChildren: () => import('./favorite-books/favorite-books.module').then( m => m.FavoriteBooksPageModule)
+  },
+  {
+    path: 'authors-modal',
+    loadChildren: () => import('./authors-modal/authors-modal.module').then( m => m.AuthorsModalPageModule)
+  },
+  {
+    path: 'book-details',
+    loadChildren: () => import('./book-details/book-details.module').then( m => m.BookDetailsPageModule)
+  },
  
 
   

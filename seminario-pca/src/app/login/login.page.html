@@ -1,4 +1,14 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-title>Inicio de Sesion</ion-title>   
+    
+  </ion-toolbar>
+</ion-header>
+
 <ion-content>
+
+
+
   <form [formGroup]="loginForm" (ngSubmit)="loginUser(loginForm.value)">
 
     <ion-item fill="solid">
@@ -48,6 +58,6 @@ shape="round" (click)="registerUser()">
 </ion-content>  
 <ion-footer>
   <ion-toolbar>
-    <ion-title>Title</ion-title>
+    <ion-title>Seminario PCA</ion-title>
   </ion-toolbar>
 </ion-footer>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuController, NavController } from '@ionic/angular';
+import { ServicesPage } from '../services/services.page';
 
 @Component({
   selector: 'app-menu',
@@ -8,9 +9,7 @@ import { MenuController, NavController } from '@ionic/angular';
 })
 export class MenuPage implements OnInit {
 
-  constructor(private menu: MenuController,
-      private navCtrl: NavController
-    ) { }
+  constructor(private menu: MenuController,private navCtrl: NavController, private authService:ServicesPage) { }
 
   ngOnInit() {
   }
@@ -19,19 +18,29 @@ export class MenuPage implements OnInit {
     this.menu.close();
   }
 
-  goToHome(){this.navCtrl.navigateRoot("/menu/home");this.menu.close();}
-
-  logout(){
-    this.navCtrl.navigateRoot("/login");
+  goToHome(){
+    this.navCtrl.navigateRoot("/menu/home");this.menu.close();
   }
 
+ 
+  logout() {  
+    console.log('logout');  
+    this.authService.logout();  
+    this.navCtrl.navigateRoot("/login"); 
+  } 
+
   goToAuthors(){
-    this.navCtrl.navigateForward("/menu/authors");
+    this.navCtrl.navigateRoot("/menu/authors");
     this.menu.close();
   }
 
   goToBooks(){
     this.navCtrl.navigateRoot("/menu/books");
+    this.menu.close();
+  }
+
+  goToMyFavorites(){
+    this.navCtrl.navigateRoot("/menu/favorite-books");
     this.menu.close();
   }
 

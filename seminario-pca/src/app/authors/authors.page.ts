@@ -1,26 +1,39 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { LibraryService } from '../services/library.service';
-
-
+import { ModalController } from '@ionic/angular';
+import { AuthorsModalPage } from '../authors-modal/authors-modal.page';
 @Component({
   selector: 'app-authors',
   templateUrl: './authors.page.html',
   styleUrls: ['./authors.page.scss'],
 })
-export class AuthorsPage {
+export class AuthorsPage implements OnInit {
   authors: any;
-  booksOff: any;
-  constructor(private libraryService: LibraryService) { }
+  
+  constructor(private libraryService: LibraryService,
+    private modalController: ModalController) { }
 
-  ionViewDidEnter(){
-    this.libraryService.getAuthors().then( res => {
-      this.authors = res;
+ 
+
+    ngOnInit() {
+      this.libraryService.getAuthors().then(authors => {
+        this.authors = authors;
       console.log(this.authors)
-    })
+      })
+    }
 
-    this.booksOff = this.libraryService.getBooksOffline();
-    console.log(this.booksOff.books);
+    async showAuthorsDetails(authors: any){
+      const modal = await this.modalController.create({
+        component: AuthorsModalPage,
+        componentProps: {
+          authors: authors
+        }
+      });
+      return await modal.present();
+    }
+
+    
 
   }
 
-}
+

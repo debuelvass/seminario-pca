@@ -1,4 +1,3 @@
-
 <ion-header>
   <ion-toolbar color="success">
     <ion-buttons slot="start">
@@ -15,23 +14,20 @@
 <ion-content>
   <ion-breadcrumbs>
     <ion-breadcrumb href="menu/home">Home</ion-breadcrumb>
-    <ion-breadcrumb href="menu/authors">Autores</ion-breadcrumb>
+    <ion-breadcrumb href="menu/favorite-books">Libros favoritos</ion-breadcrumb>
   </ion-breadcrumbs>
   <ion-list>
-    <ion-item *ngFor="let author of authors" (click)="showAuthorsDetails(author)">
-      <ion-avatar slot="start">
-        <img src="{{author.photo}}"/>
-      </ion-avatar>
-      
-      <ion-label>{{author.name}}</ion-label>
+
+    <ion-item *ngFor="let favorite of my_favorite_books">
+      <ion-label>{{favorite.name}}</ion-label>
     </ion-item>
+
   </ion-list>
-  
+
 </ion-content>
 
 <ion-footer>
   <ion-toolbar>
-    <ion-title>Autores</ion-title>
+    <ion-title>Libros Favoritos</ion-title>
   </ion-toolbar>
 </ion-footer>
-
