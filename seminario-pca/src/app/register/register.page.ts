@@ -10,6 +10,7 @@ import { AlertController } from '@ionic/angular';
   styleUrls: ['./register.page.scss'],
 })
 export class RegisterPage implements OnInit {
+  
 
   registerForm: FormGroup;
 
@@ -105,13 +106,37 @@ export class RegisterPage implements OnInit {
     this.navCtrl.navigateBack("/login");
   }
 
-  registerUser(register_form: any){
-    console.log(register_form)
+  async registerUser(register_form: any){
+
+
+    const confirm = await this.alertController.create({  
+      header: '¡Confirmar!',  
+      message: '¿Desea enviar los datos para su registro?',  
+      buttons: [  
+        {  
+          text: 'No',  
+          role: 'cancel',  
+          handler: () => {  
+            console.log('Los datos no fueron enviados');  
+          }  
+        },  
+        {  
+          text: 'Si',  
+          handler: () => {  
+            
+            console.log(register_form)
     this.authenticate.registerUser(register_form).then( res => {
       this.navCtrl.navigateForward("/login");
     }).catch(err => {
       this.presentAlert("Información", "Ocurrio un error", err);
     })
+
+          }  
+        }  
+      ]  
+    });  
+    await confirm.present();  
+   
   }
 
   async presentAlert(header: any, subHeader: any, message: any) {

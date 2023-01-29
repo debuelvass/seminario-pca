@@ -1,63 +1,78 @@
 <ion-header>
-  <ion-toolbar color="success">
-    <ion-title>Inicio de Sesion</ion-title>   
+  <ion-toolbar>
+     
     
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
-
-
+<ion-content padding>
   <form [formGroup]="loginForm" (ngSubmit)="loginUser(loginForm.value)">
-
-    <ion-item fill="solid">
-      <ion-label position="floating">Ingrese su email</ion-label>
-      <ion-input formControlName="email"></ion-input>
-    </ion-item>
-<div>
-  <ng-container *ngFor="let validation of validation_message.email">
-    <div *ngIf="
-    loginForm.get('email')?.hasError(validation.type) && 
-    (loginForm.get('email')?.dirty || 
-    loginForm.get('email')?.touched)
-    ">
-      {{validation.message}}
-    </div>
-  </ng-container>
-</div>
-    <ion-item fill="solid">
-      <ion-label position="floating">Ingrese su contraseña</ion-label>
-      <ion-input formControlName="password" type="password"></ion-input>
-    </ion-item>
-    <div>
-      <ng-container *ngFor="let validation of validation_message_password.password">
-        <div *ngIf="
-        loginForm.get('password')?.hasError(validation.type) && 
-        (loginForm.get('password')?.dirty || 
-        loginForm.get('password')?.touched)
-        ">
-          {{validation.message}}
+    <ion-grid>
+      <ion-row justify-content-center>
+        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+          <div>
+            <h2 class="ion-text-center">Ingresar al sistema</h2>
+            
+          </div>
+          <div padding>
+            <ion-item >
+              <ion-label position="stacked">Correo</ion-label>
+              <ion-icon name="mail-outline" slot="start"></ion-icon>
+              <ion-input formControlName="email"></ion-input>
+            </ion-item>
+        <div>
+          <ng-container *ngFor="let validation of validation_message.email">
+            <div *ngIf="
+            loginForm.get('email')?.hasError(validation.type) && 
+            (loginForm.get('email')?.dirty || 
+            loginForm.get('email')?.touched)
+            ">
+              {{validation.message}}
+            </div>
+          </ng-container>
         </div>
-      </ng-container>
-    </div>
-
-<ion-button 
+            <ion-item >
+              <ion-label position="stacked">Contraseña</ion-label>
+              <ion-icon name="key-outline" slot="start"></ion-icon>
+              <ion-input formControlName="password" type="password"></ion-input>
+            </ion-item>
+            <div>
+              <ng-container *ngFor="let validation of validation_message_password.password">
+                <div *ngIf="
+                loginForm.get('password')?.hasError(validation.type) && 
+                (loginForm.get('password')?.dirty || 
+                loginForm.get('password')?.touched)
+                ">
+                  {{validation.message}}
+                </div>
+              </ng-container>
+            </div>
+          </div>
+          <br>
+          <div padding>
+            <ion-button 
 shape="round"
 [disabled]="!loginForm.valid"
-type="submit">
+type="submit" expand="block">
   Ingresar
 </ion-button>
 <ion-button 
-shape="round" (click)="registerUser()">
+shape="round" (click)="registerUser()" expand="block">
   Registrarse
 </ion-button>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </form>
-{{ errorMessage }}
+  {{ errorMessage }}
+</ion-content>
 
-</ion-content>  
+ 
 <ion-footer>
   <ion-toolbar>
-    <ion-title>Seminario PCA</ion-title>
+    <ion-title class="ion-text-capitalize">seminario ionic pca</ion-title>
   </ion-toolbar>
+  
+
 </ion-footer>

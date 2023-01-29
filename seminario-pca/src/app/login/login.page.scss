@@ -1,0 +1,23 @@
+//personalizaciones
+
+ion-item {
+    
+    --color: #062f77;
+    
+}
+ion-toolbar{
+    --background: #edb10c;
+    
+}
+ion-button{
+    --background: #062f77;
+}
+
+  h2,h3 {
+    color: var(--ion-color-danger-shade);
+  }
+
+  ion-footer > ion-toolbar{
+    font-size:55px;
+    
+}

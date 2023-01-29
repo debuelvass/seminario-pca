@@ -1,5 +1,31 @@
+//personalizaciones
+
+ion-item {
+    
+    --color: #062f77;
+    
+}
+ion-toolbar{
+    --background: #edb10c;
+    
+}
+ion-button{
+    --background: #062f77;
+}
+
+  h2,h3 {
+    color: var(--ion-color-danger-shade);
+  }
+
 .size-logo img{
     max-width: 100px;
     margin: 0 auto;
     display: block;
+    border-radius:150px;
 }
+
+.size-logo {
+    align-content: center;
+
+}
+

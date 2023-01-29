@@ -1,6 +1,6 @@
 
 <ion-header>
-  <ion-toolbar color="success">
+  <ion-toolbar>
     <ion-buttons slot="start">
       <ion-back-button text="Volver"></ion-back-button>
       
@@ -14,22 +14,16 @@
 
 <ion-content>
   <ion-breadcrumbs>
-    <ion-breadcrumb href="menu/home">Home</ion-breadcrumb>
+    <ion-breadcrumb href="menu/home">Inicio</ion-breadcrumb>
     <ion-breadcrumb href="menu/books">Libros</ion-breadcrumb>
   </ion-breadcrumbs>
   <ion-list [inset]="true">
     <ion-item *ngFor="let book of books" (click)="showBook(book)">
-      <ion-avatar slot="start">
+      <ion-thumbnail slot="start">
         <img src="{{book.cover}}"/>
-      </ion-avatar>
+      </ion-thumbnail>
       
       <ion-label>{{book.name}}</ion-label>
     </ion-item>
   </ion-list>
 </ion-content>
-
-<ion-footer>
-  <ion-toolbar>
-    <ion-title>Libros</ion-title>
-  </ion-toolbar>
-</ion-footer>

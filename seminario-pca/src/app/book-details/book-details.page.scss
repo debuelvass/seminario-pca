@@ -1,5 +1,48 @@
+//personalizaciones
+
 .cover {
     max-height: 150px;
     margin: 0 auto;
     display: block;
 }
+
+ion-badge {
+    --background: var(--ion-color-danger-shade);
+    --color: white;
+    --padding-end: 20px;
+    --padding-start: 20px;
+  }
+
+ion-toolbar{
+    --background: #edb10c;
+    
+}
+
+h1 {
+    color: var(--ion-color-danger-shade);
+  }
+
+  ion-icon[name="close-circle"] {
+    float: right;
+    color: var(--ion-color-danger-shade);
+    font-size: 40px;
+  }
+
+  ion-icon[name="heart-circle"] {
+    float: right;
+    color: var(--ion-color-danger-shade);
+    font-size: 40px;
+  }
+
+  ion-icon[name="heart-dislike-circle"] {
+    float: right;
+    color: var(--ion-color-danger-shade);
+    font-size: 40px;
+  }
+
+  ion-col {
+    background-color: var(--ion-color-medium);
+    border: solid 1px #fff;
+    color: #fff;
+    text-align: center;
+  }

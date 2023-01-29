@@ -15,8 +15,8 @@ export class LoginPage implements OnInit {
   loginForm: FormGroup;
   validation_message = {
     email: [
-      { type: "required", message: "El email es un dato obligatorio" },
-      { type: "pattern", message: "El email ingresado no es valido" }
+      { type: "required", message: "El correo es un dato obligatorio" },
+      { type: "pattern", message: "El correo ingresado no es valido" }
     ]
   }
 

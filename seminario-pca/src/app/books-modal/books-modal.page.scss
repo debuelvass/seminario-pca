@@ -1,0 +1,24 @@
+//personalizaciones
+ion-toolbar{
+    --background: #edb10c;
+    
+}
+
+ion-title {
+    color: var(--ion-color-danger-shade);
+  }
+
+ ion-icon[name="close-circle"] {
+    float: right;
+    color: var(--ion-color-danger-shade);
+    font-size: 40px;
+  }
+
+ion-item {
+  --background: #edb10c2a;
+  --color: #062f77;
+
+  --border-width: 0 0 4px 0;
+  --border-color: #edb10c;
+  --border-style: double;
+}

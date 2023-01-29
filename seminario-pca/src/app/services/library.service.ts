@@ -25,6 +25,8 @@ export class LibraryService {
     return booksOffline;
   }
 
+  //funcion que lista los libros de un autor
+
   getBooksAuthor(author_id:any) {
     return fetch(`https://librarypca.fly.dev/books_authors?author_id=${author_id}`).then(
       books => books.json()
@@ -34,6 +36,13 @@ export class LibraryService {
   getBooks(){
     return fetch("https://librarypca.fly.dev/books").then(
       allBooks => allBooks.json()
+    );
+  }
+
+  //funcion que lista el top de libros
+  getTopBooks(){
+    return fetch("https://librarypca.fly.dev/top_books").then(
+      topBooks => topBooks.json()
     );
   }
 

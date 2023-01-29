@@ -7,11 +7,14 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ServicesPage {
+// url Server del endpoint
 
   urlServer = "https://librarypca.fly.dev/";
   httpHeaders = { headers: new HttpHeaders({"Content-Type": "application/json"}) };
 
   constructor(private storage: Storage, private http: HttpClient) { }
+
+  // funcion para autenticarse el usuario de manera local
 
   loginUserLocal(credentials: any){
     return new Promise((accept, reject) =>{
@@ -23,9 +26,10 @@ export class ServicesPage {
       }
     });
   }
+  // funcion para cerrar la sesion del usuario, coloca isUserLoggedIn en false y elimina a user_id del storage
 
   logout() {    
-    this.storage.remove('isUserLoggedIn');  
+    this.storage.set('isUserLoggedIn',false);  
     this.storage.remove("user_id")      
     } 
 
@@ -33,6 +37,8 @@ export class ServicesPage {
     userData.password = btoa(userData.password);
     return this.storage.set("user", userData);
   }
+
+  // funcion para autenticarse el usuario
 
   loginUser(credentials: any){
     return new Promise( (accept, reject) => {
@@ -42,6 +48,7 @@ export class ServicesPage {
       this.http.post(`${this.urlServer}login`, params, this.httpHeaders).subscribe( (data: any) => {
         if (data.status == "OK") {
           accept(data);
+          console.log(data);
         }else{
           reject(data.errors)
         }
@@ -50,6 +57,8 @@ export class ServicesPage {
       })
     })
   }
+
+  // funcion para registrarse el usuario
 
   registerUser(userData: any){
     let params = {

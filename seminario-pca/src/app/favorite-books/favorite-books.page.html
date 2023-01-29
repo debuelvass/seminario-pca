@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar color="success">
+  <ion-toolbar>
     <ion-buttons slot="start">
       <ion-back-button text="Volver"></ion-back-button>
       
@@ -13,21 +13,18 @@
 
 <ion-content>
   <ion-breadcrumbs>
-    <ion-breadcrumb href="menu/home">Home</ion-breadcrumb>
-    <ion-breadcrumb href="menu/favorite-books">Libros favoritos</ion-breadcrumb>
+    <ion-breadcrumb href="menu/home">Inicio</ion-breadcrumb>
+    <ion-breadcrumb href="menu/favorite-books">Mis libros favoritos</ion-breadcrumb>
   </ion-breadcrumbs>
   <ion-list>
 
     <ion-item *ngFor="let favorite of my_favorite_books">
+      <ion-thumbnail slot="start">
+        <img src="{{favorite.cover}}"/>
+      </ion-thumbnail>
       <ion-label>{{favorite.name}}</ion-label>
     </ion-item>
 
   </ion-list>
 
 </ion-content>
-
-<ion-footer>
-  <ion-toolbar>
-    <ion-title>Libros Favoritos</ion-title>
-  </ion-toolbar>
-</ion-footer>

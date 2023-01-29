@@ -1,8 +1,8 @@
 <ion-header>
-  <ion-toolbar color="primary">
+  <ion-toolbar>
     <ion-buttons> 
       <ion-button slot="end" (click)="closeModal()">
-        <ion-icon name="close-circle-outline"></ion-icon>
+        <ion-icon name="close-circle"></ion-icon>
       </ion-button>
     </ion-buttons>
     
@@ -10,6 +10,9 @@
 </ion-header>
 
 <ion-content>
+  <ion-list-header>
+    <h2>Lista de libros</h2>
+  </ion-list-header>
   <ion-list>
     <ion-item *ngFor="let book of books">
       <ion-avatar slot="start">

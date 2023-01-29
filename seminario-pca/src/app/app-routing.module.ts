@@ -41,6 +41,10 @@ const routes: Routes = [
     path: 'book-details',
     loadChildren: () => import('./book-details/book-details.module').then( m => m.BookDetailsPageModule)
   },
+  {
+    path: 'books-top',
+    loadChildren: () => import('./books-top/books-top.module').then( m => m.BooksTopPageModule)
+  },
  
 
   

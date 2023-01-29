@@ -1,9 +1,9 @@
 <ion-header>
 
-    <ion-toolbar color="success">
+    <ion-toolbar>
         <ion-chip>
             
-            <ion-label>Usuario: Seminario PCA</ion-label>
+            <ion-label>Usuario</ion-label>
             
           </ion-chip>
         <ion-buttons slot="end">
@@ -13,9 +13,9 @@
 </ion-header>
 <ion-content>
     
-    <p class="ion-text-center ion-text-uppercase">Dashboard</p>
+    <h2 class="ion-text-center ion-text-uppercase">Dashboard</h2>
 
-    <ion-slides [options]="slideOps">
+    <ion-slides [options]="slideOps" pager=true>
         <ion-slide *ngFor="let author of authors">
             <ion-avatar (click)="showBooks(author)">
                 <img src="{{author.photo}}"/>
@@ -60,9 +60,9 @@
                 </ion-card>
             </ion-col>
             <ion-col size="6">
-                <ion-card color="dark" >
+                <ion-card color="dark" (click)="goTopBooks()">
                     <ion-card-header>
-                      <ion-card-title>Top 10</ion-card-title>
+                      <ion-card-title>Top Libros</ion-card-title>
                     </ion-card-header>
                     <ion-card-content>
                         <ion-icon name="stats-chart"></ion-icon>

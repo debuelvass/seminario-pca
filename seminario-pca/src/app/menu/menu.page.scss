@@ -1,0 +1,16 @@
+//personalizaciones
+
+ion-toolbar{
+    --background: #000000;
+    
+}
+
+ion-title{
+    color: var(--ion-color-danger-shade);
+  }
+
+ion-icon {
+    float: right;
+    color: var(--ion-color-danger-shade);
+    font-size: 30px;
+  }
